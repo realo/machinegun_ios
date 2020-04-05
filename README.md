@@ -9,6 +9,6 @@ Execute the command:
 * ` apk upgrade`
 * ` apk add git`
 * ` git clone https://github.com/realo/machinegun_ios`
-* ` cd /machinegun_ios`
+* ` cd machinegun_ios/`
 * ` sh install.sh`
 * ` python machinegun_ios.py`
