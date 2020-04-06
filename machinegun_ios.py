@@ -33,11 +33,9 @@ def Main():
 			print(info)
 			print("Proxy: "+Fore.BLUE+"{}".format(proxy)+Style.RESET_ALL)
 			print ("1. СМС спамер")
-			print("2. Добавить телефон в антиспам лист")
-			print("3. Проверить телефон в антиспам листе")
-			print("4. Спамер звонков")
-			print("5. Обновить прокси")
-			print("6. Выход.")
+			print("2. Спамер звонков")
+			print("3. Обновить прокси")
+			print("4. Выход.")
 			input1 = input(Fore.BLUE+"Введите номер пункта: "+Style.RESET_ALL)
 			if input1 == "1":
 				os.system('cls' if os.name=='nt' else 'clear')
@@ -723,49 +721,7 @@ def Main():
 					except:
 						info = Fore.RED+"\nНекорректный ввод данных!"+Style.RESET_ALL
 			
-
-
 			elif input1 == "2":
-				print ("Введите номер:")
-				phone = input(Fore.BLUE+"machinegun_ios > "+Style.RESET_ALL)
-				if phone[0] == '+':
-					phone = phone[1:]
-				if phone[0] == '8':
-					phone = '7'+phone[1:]
-				if phone[0] == '9':
-					phone = '7'+phone
-				try:
-					if int(phone):
-						id=requests.post('https://rainbow-t-shirt.com/machinegun_ios/json.php', data={'phone': phone}).json()["id"]
-						if int(id) > 0:
-							info = Fore.GREEN+"\nPhone {} is allready in antispam list.".format(phone)+Style.RESET_ALL
-						elif int(id) == 0:
-							requests.post('https://rainbow-t-shirt.com/machinegun_ios/ajax.php', data={'phone': phone})
-							info = Fore.GREEN+"\nТелефон {} добавлен в антиспам лист.".format(phone)+Style.RESET_ALL
-							
-				except:
-					info = Fore.RED+"\nНекорректно введен телефон!".format(phone)+Style.RESET_ALL
-			
-			elif input1 == "3":
-				print ("Войдите в телефон для проверки:")
-				phone = input(Fore.BLUE+"machinegun_ios > "+Style.RESET_ALL)
-				if phone[0] == '+':
-					phone = phone[1:]
-				if phone[0] == '8':
-					phone = '7'+phone[1:]
-				if phone[0] == '9':
-					phone = '7'+phone
-				try:
-					if int(phone):
-						id=requests.post('https://rainbow-t-shirt.com/machinegun_ios/json.php', data={'phone': phone}).json()["id"]
-						if int(id) > 0:
-							info = Fore.GREEN+"\nТелефон {} находится в антиспам листе.".format(phone)+Style.RESET_ALL
-						elif int(id) == 0:
-							info = Fore.RED+"\nТелефон {} не находится в антиспам листе.".format(phone)+Style.RESET_ALL
-				except:
-					info = Fore.RED+"\nНекорректно введен телефон!"+Style.RESET_ALL
-			
-			elif input1 == "4":
 				try:
 					print("Введите  номер:")
 					phone = input(Fore.BLUE+"machinegun_ios > "+Style.RESET_ALL)
@@ -1003,7 +959,7 @@ def Main():
 				except:
 					info = Fore.RED+"\nНекорректно введены данные!"+Style.RESET_ALL
 			
-			elif input1 == "5":
+			elif input1 == "3":
 				try:
 					print ("Введите http(s)://IP:port proxy.")
 					print ("Пример: "+Fore.GREEN+"https://123.45.6.78:8080"+Style.RESET_ALL)
@@ -1026,7 +982,7 @@ def Main():
 					proxy = "localhost"
 			
 
-			elif input1 == "6":
+			elif input1 == "4":
 				print (Fore.BLUE+"\nBye!\n"+Style.RESET_ALL)
 				exit()
 	main()
