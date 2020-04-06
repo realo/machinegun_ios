@@ -10,5 +10,5 @@ Execute the command:
 * ` apk add git`
 * ` git clone https://github.com/realo/machinegun_ios`
 * ` cd machinegun_ios/`
-* ` sh install.sh` - use 2 for iOS, 1 for Termux (Androis)
+* ` sh install.sh` - use 2 for iOS, 1 for Termux (Android)
 
